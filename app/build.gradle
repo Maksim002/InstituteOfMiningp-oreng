@@ -45,4 +45,14 @@ dependencies {
 
     //photo upload
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    // expandable
+    implementation 'at.blogc:expandabletextview:1.0.5'
+
+    // pager
+    implementation "androidx.viewpager2:viewpager2:1.0.0-beta02"
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
