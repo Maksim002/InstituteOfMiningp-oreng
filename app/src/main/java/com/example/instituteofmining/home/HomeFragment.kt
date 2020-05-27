@@ -41,6 +41,7 @@ class HomeFragment : Fragment() {
         }
 
         initViewPager()
+//
     }
 
     var simpleRandom = Runnable {
