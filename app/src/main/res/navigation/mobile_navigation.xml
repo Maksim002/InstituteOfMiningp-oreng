@@ -28,4 +28,10 @@
         android:name="com.example.instituteofmining.directions.DirectionsFragment"
         android:label="Специальности и направление"
         tools:layout="@layout/fragment_directions" />
+
+    <fragment
+        android:id="@+id/navigation_new_employee"
+        android:name="com.example.instituteofmining.staff.NewEmployeeFragment"
+        android:label="Новый сотрудник"
+        tools:layout="@layout/fragment_new_employee" />
 </navigation>

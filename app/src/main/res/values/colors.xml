@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#060683</color>
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#3700B3</color>
     
     <color name="colorFuchsia">#FF8C00</color>
     <color name="colorLavender">#E6E6FA</color>

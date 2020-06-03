@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:padding="16dp"
     android:background="#EFEBEB"
     tools:context=".home.HomeFragment">
 
@@ -15,7 +15,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="5dp"
             android:src="@drawable/ic_emblem" />
 
         <TextView
@@ -28,70 +29,83 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
-
-        <at.blogc.android.views.ExpandableTextView
-            android:id="@+id/home_title_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/short_description"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="@string/computer_technology"
-            android:textColor="#8B4513"
-            android:textSize="18sp" />
-
         <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="16dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             app:cardCornerRadius="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_amanbekov_janakovih" />
+            <at.blogc.android.views.ExpandableTextView
+                android:id="@+id/home_title_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:text="@string/short_description"
+                android:textSize="16sp" />
+
         </androidx.cardview.widget.CardView>
 
-        <TextView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/home_name_ja"
-            android:textColor="#000080"
-            android:textSize="18sp" />
+            app:cardCornerRadius="8dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/home_the_words_of_the_director"
-            android:textColor="#000080"
-            android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16sp"
-            android:gravity="center"
-            android:text="@string/activity"
-            android:textColor="#000"
-            android:textSize="24sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="@string/computer_technology"
+                    android:textColor="#8B4513"
+                    android:textSize="18sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_amanbekov_janakovih" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/home_name_ja"
+                    android:textColor="#000080"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_the_words_of_the_director"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:textColor="#000080"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/view_image_slider"
             android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
             android:layout_height="230dp"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginBottom="5dp"
             app:cardCornerRadius="8dp">
 
             <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
@@ -105,14 +119,24 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:background="#FFFEFE"
             app:cardCornerRadius="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFEFE"
                 android:padding="16dp"
                 android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16sp"
+                    android:gravity="center"
+                    android:text="@string/activity"
+                    android:textColor="#000"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:layout_width="match_parent"
