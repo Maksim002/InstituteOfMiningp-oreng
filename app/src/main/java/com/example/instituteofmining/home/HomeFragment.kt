@@ -1,13 +1,14 @@
 package com.example.instituteofmining.home
 
-import android.content.Intent
-import android.net.Uri
+
+import android.icu.text.Transliterator
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -17,11 +18,17 @@ import at.blogc.android.views.ExpandableTextView
 import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.HomeSliderModel
 import com.example.instituteofmining.adapter.home.HomeSliderAdapter
-import com.example.instituteofmining.adapter.home.HomeSliderHolder
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants.PlayerError
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlin.math.max
 
 
 class HomeFragment : Fragment() {
+
+    private lateinit var yotube: YouTubePlayerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,20 +42,35 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getExpandableTextViewE(view)
 
-        image_view_video.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/qxQT8nhnQ5A"))
-            startActivity(browserIntent)
-        }
+        yotube = view.findViewById(R.id.youtube_player_view)
+
+        yotube.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onError(youTubePlayer: YouTubePlayer, error: PlayerError) {
+                super.onError(youTubePlayer, error)
+                youTubePlayer.loadVideo("qxQT8nhnQ5A", 0f)
+            }
+        })
 
         initViewPager()
-//
     }
 
     var simpleRandom = Runnable {
-        view_image_slider.setCurrentItem(view_image_slider.currentItem + 1)
+
+        try {
+            if (view_image_slider.adapter!!.itemCount -1 == view_image_slider.currentItem) {
+                view_image_slider.setCurrentItem(-1)
+            } else {
+                view_image_slider.setCurrentItem(view_image_slider.currentItem + 1)
+            }
+
+            println()
+        } catch (e: Exception) {
+
+        }
+
     }
 
-    private fun initViewPager(){
+    private fun initViewPager() {
         val list: ArrayList<HomeSliderModel> = ArrayList()
         list.add(HomeSliderModel("http://itimm.ksmu.kg/wp-content/uploads/2019/06/IMG_0849.jpg"))
         list.add(HomeSliderModel("http://itimm.ksmu.kg/wp-content/uploads/2019/06/IMG_0850.jpg"))
@@ -65,13 +87,15 @@ class HomeFragment : Fragment() {
         adapters.submitUpdate(list)
         view_image_slider.adapter = adapters
 
+        view_image_slider.setUserInputEnabled(false);
+
         view_image_slider.clipToPadding = false
         view_image_slider.clipChildren = false
         view_image_slider.offscreenPageLimit = 3
         view_image_slider.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
         val composite = CompositePageTransformer()
-        val margeTransform = MarginPageTransformer( 40)
+        val margeTransform = MarginPageTransformer(40)
         composite.addTransformer(margeTransform)
         composite.addTransformer { page, position ->
             val r: Float = 1 - Math.abs(position)
@@ -84,7 +108,7 @@ class HomeFragment : Fragment() {
                 super.onPageSelected(position)
                 val holder = Handler()
                 holder.removeCallbacks(simpleRandom)
-                holder.postDelayed(simpleRandom, 3000 )
+                holder.postDelayed(simpleRandom, 6000)
             }
         })
     }
@@ -108,5 +132,15 @@ class HomeFragment : Fragment() {
                 expandableTextViewE.setText(R.string.short_description)
             }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        initYoutube()
+
+    }
+
+    fun initYoutube() {
+
     }
 }
