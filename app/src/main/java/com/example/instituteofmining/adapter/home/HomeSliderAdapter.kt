@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instituteofmining.R
-import com.example.instituteofmining.adapter.HomeSliderModel
+import com.example.instituteofmining.adapter.model.HomeSliderModel
 
 class HomeSliderAdapter: RecyclerView.Adapter<HomeSliderHolder>(){
 

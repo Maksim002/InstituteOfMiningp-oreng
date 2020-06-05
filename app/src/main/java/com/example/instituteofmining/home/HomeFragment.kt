@@ -1,14 +1,12 @@
 package com.example.instituteofmining.home
 
 
-import android.icu.text.Transliterator
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
@@ -16,14 +14,13 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import at.blogc.android.views.ExpandableTextView
 import com.example.instituteofmining.R
-import com.example.instituteofmining.adapter.HomeSliderModel
+import com.example.instituteofmining.adapter.model.HomeSliderModel
 import com.example.instituteofmining.adapter.home.HomeSliderAdapter
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants.PlayerError
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import kotlinx.android.synthetic.main.fragment_home.*
-import kotlin.math.max
 
 
 class HomeFragment : Fragment() {

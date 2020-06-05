@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "387140262668",
+    "firebase_url": "https://information-9893d.firebaseio.com",
+    "project_id": "information-9893d",
+    "storage_bucket": "information-9893d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387140262668:android:4f7c1de1223bd1e0c18729",
+        "android_client_info": {
+          "package_name": "com.example.instituteofmining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387140262668-3rpbdm0b2f5ua7lasvkg82hda98nejhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instituteofmining",
+            "certificate_hash": "668e3aae236f615460baeb4bd26135eec7f351ba"
+          }
+        },
+        {
+          "client_id": "387140262668-g5uha8simet2cv838l3qrugr4d1v0694.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjx_7zpAexwi0968ct6hWUAFI6wCLOvkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387140262668-g5uha8simet2cv838l3qrugr4d1v0694.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.instituteofmining.R
+import com.example.instituteofmining.adapter.employee.NewEmployeeAdapter
 import com.example.instituteofmining.servise.NewEmployeeModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.fragment_new_employee.*
 class NewEmployeeFragment : Fragment() {
     private lateinit var myDatabase: DatabaseReference
     private val employee = "employee"
+    private lateinit var adatapers: NewEmployeeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +27,6 @@ class NewEmployeeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-
     }
 
     fun init(){
@@ -38,6 +39,12 @@ class NewEmployeeFragment : Fragment() {
             val age = new_employee_age.text.toString()
             val myEmployee = NewEmployeeModel(id, name, surname, age)
             myDatabase.push().setValue(myEmployee)
+
+            adatapers = NewEmployeeAdapter()
+
+            new_employee_recycler.adapter = adatapers
+
+
         }
     }
 }
