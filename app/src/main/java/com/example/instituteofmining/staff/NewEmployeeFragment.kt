@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.employee.NewEmployeeAdapter
-import com.example.instituteofmining.servise.NewEmployeeModel
+import com.example.instituteofmining.adapter.model.EmployeeModel
+import com.example.instituteofmining.adapter.model.NewEmployeeModel
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_new_employee.*
@@ -27,6 +28,7 @@ class NewEmployeeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+        initRecyclerView()
     }
 
     fun init(){
@@ -37,14 +39,22 @@ class NewEmployeeFragment : Fragment() {
             val name = new_employee_name.text.toString()
             val surname = new_employee_surname.text.toString()
             val age = new_employee_age.text.toString()
-            val myEmployee = NewEmployeeModel(id, name, surname, age)
+            val myEmployee =
+                NewEmployeeModel(
+                    id,
+                    name,
+                    surname,
+                    age
+                )
             myDatabase.push().setValue(myEmployee)
-
-            adatapers = NewEmployeeAdapter()
-
-            new_employee_recycler.adapter = adatapers
-
-
         }
+    }
+    private fun initRecyclerView(){
+        val adapters = NewEmployeeAdapter()
+        val list: ArrayList<EmployeeModel> = ArrayList()
+        list.add(EmployeeModel(1, "", "wdwd", "","","","",""))
+
+        adapters.update(list)
+        new_employee_recycler.adapter = adapters
     }
 }

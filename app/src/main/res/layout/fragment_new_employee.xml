@@ -1,185 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16dp"
     tools:context=".staff.NewEmployeeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="170dp"
-                android:layout_gravity="bottom"
-                android:src="@drawable/ic_person" />
+            android:layout_margin="2dp"
+            app:cardCornerRadius="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
+                android:layout_height="match_parent"
+                android:padding="16dp"
                 android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/new_employee_name_out"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Имя">
+                    android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/new_employee_name"
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/ic_person"
+                        tools:ignore="ContentDescription" />
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="8dp"
-                        android:editable="false"
-                        android:inputType="textEmailAddress"
-                        android:textSize="16dp" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/new_employee_name_out"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Имя">
+
+                            <EditText
+                                android:id="@+id/new_employee_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="8dp"
+                                android:editable="false"
+                                android:inputType="textEmailAddress"
+                                android:textSize="16dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/new_employee_surname_out"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Фамилия">
+
+                            <EditText
+                                android:id="@+id/new_employee_surname"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="8dp"
+                                android:editable="false"
+                                android:inputType="textEmailAddress"
+                                android:textSize="16dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/new_employee_age_out"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2dp"
+                            android:hint="Возраст">
+
+                            <EditText
+                                android:id="@+id/new_employee_age"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="8dp"
+                                android:editable="false"
+                                android:inputType="number"
+                                android:textSize="16dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/new_employee_surname_out"
+                    android:id="@+id/new_employee_education_out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Фамилия">
-
-                    <EditText
-                        android:id="@+id/new_employee_surname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="8dp"
-                        android:editable="false"
-                        android:inputType="textEmailAddress"
-                        android:textSize="16dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/new_employee_age_out"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="2dp"
-                    android:hint="Возраст">
+                    android:hint="Образование">
 
                     <EditText
-                        android:id="@+id/new_employee_age"
+                        android:id="@+id/new_employee_education"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"
                         android:editable="false"
-                        android:inputType="number"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_employee_graduated_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="Окончил(ла)">
+
+                    <EditText
+                        android:id="@+id/new_employee_graduated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:editable="false"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_employee_experience_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="Стаж работы">
+
+                    <EditText
+                        android:id="@+id/new_employee_experience"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:editable="false"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_employee_degree_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="Ученая степень">
+
+                    <EditText
+                        android:id="@+id/new_employee_degree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:editable="false"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_employee_academic_title_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="Ученое звание">
+
+                    <EditText
+                        android:id="@+id/new_employee_academic_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:editable="false"
+                        android:inputType="textEmailAddress"
                         android:textSize="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_employee_education_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="2dp"
-            android:hint="Образование">
-
-            <EditText
-                android:id="@+id/new_employee_education"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:editable="false"
-                android:inputType="textEmailAddress"
-                android:textSize="16dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_employee_graduated_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="2dp"
-            android:hint="Окончил(ла)">
-
-            <EditText
-                android:id="@+id/new_employee_graduated"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:editable="false"
-                android:inputType="textEmailAddress"
-                android:textSize="16dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_employee_experience_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="2dp"
-            android:hint="Стаж работы">
-
-            <EditText
-                android:id="@+id/new_employee_experience"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:editable="false"
-                android:inputType="textEmailAddress"
-                android:textSize="16dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_employee_degree_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="2dp"
-            android:hint="Ученая степень">
-
-            <EditText
-                android:id="@+id/new_employee_degree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:editable="false"
-                android:inputType="textEmailAddress"
-                android:textSize="16dp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/new_employee_academic_title_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="2dp"
-            android:hint="Ученое звание">
-
-            <EditText
-                android:id="@+id/new_employee_academic_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="8dp"
-                android:editable="false"
-                android:inputType="textEmailAddress"
-                android:textSize="16dp" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/new_employee_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_new_employee" />
 
         <Button
             android:id="@+id/button_add"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="name"/>
+            android:text="name" />
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

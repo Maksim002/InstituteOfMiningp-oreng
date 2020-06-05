@@ -15,11 +15,64 @@
       },
       "oauth_client": [
         {
+          "client_id": "387140262668-qom60ue13ucvvcp85l7m0olnsgnprfk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.instituteofmining",
+            "certificate_hash": "75679ad1f7f339870836ffd84b8f7e0879ef7635"
+          }
+        },
+        {
           "client_id": "387140262668-3rpbdm0b2f5ua7lasvkg82hda98nejhq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.instituteofmining",
             "certificate_hash": "668e3aae236f615460baeb4bd26135eec7f351ba"
+          }
+        },
+        {
+          "client_id": "387140262668-g5uha8simet2cv838l3qrugr4d1v0694.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjx_7zpAexwi0968ct6hWUAFI6wCLOvkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387140262668-g5uha8simet2cv838l3qrugr4d1v0694.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387140262668:android:df516c654fc93c0cc18729",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387140262668-c3ks16t6l6vm9nqd9apip67icb44deec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "ce3acbb73fea3d9b84969c6e76865d9a05eac440"
+          }
+        },
+        {
+          "client_id": "387140262668-b2itov63b5fsped2ek3c4kamun88o1ot.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "75679ad1f7f339870836ffd84b8f7e0879ef7635"
           }
         },
         {
