@@ -2,11 +2,9 @@ package com.example.instituteofmining.adapter.employee
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Adapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.model.EmployeeModel
-import com.example.instituteofmining.staff.NewEmployeeFragment
 import kotlinx.android.synthetic.main.item_new_employee.view.*
 
 class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
@@ -15,7 +13,7 @@ class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
     private var count = 0
 
     fun getBookingRoomModels(): MutableList<EmployeeModel> {
-        return item
+        return this.item
     }
 
     fun delete(position: EmployeeModel){
@@ -23,10 +21,6 @@ class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
         notifyDataSetChanged()
     }
 
-    fun update(list: MutableList<EmployeeModel>) {
-        this.item = list
-        notifyDataSetChanged()
-    }
     fun add(){
         this.item.add(EmployeeModel(++count, "", "", "", "", "", "", "", "", "", ""))
         notifyItemRangeChanged(item.size ,item.size)

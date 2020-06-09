@@ -20,18 +20,28 @@ import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.employee.NewEmployeeAdapter
 import com.example.instituteofmining.adapter.model.EmployeeModel
 import com.example.instituteofmining.adapter.model.NewEmployeeModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_new_employee.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
+import java.util.*
+import kotlin.collections.ArrayList
 
 class NewEmployeeFragment : Fragment() {
     private lateinit var myDatabase: DatabaseReference
+    private var filePath: Uri? = null
+    private var firebaseStore: FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
     private val employee = "employee"
-    private lateinit var adatapers: NewEmployeeAdapter
+    val adapters = NewEmployeeAdapter()
 
     private val STORAGE_PERMISION_CODE: Int = 1
     private val IMAGE_PICK_CODE = 10
@@ -41,7 +51,7 @@ class NewEmployeeFragment : Fragment() {
     private var files = ArrayList<MultipartBody.Part>()
     private var names = ArrayList<String>()
 
-
+    private lateinit var myUrlImage: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,8 +63,8 @@ class NewEmployeeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        adatapers = NewEmployeeAdapter()
-        list = EmployeeModel(adatapers.itemCount,"","","","","","","","","","")
+
+        list = EmployeeModel(adapters.itemCount, "", "", "", "", "", "", "", "", "", "")
 
         employee_add_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -82,13 +92,12 @@ class NewEmployeeFragment : Fragment() {
     fun init() {
         myDatabase = FirebaseDatabase.getInstance().getReference(employee)
 
-
         val adapters = NewEmployeeAdapter()
         adapters.add()
         new_employee_recycler.adapter = adapters
 
         new_employee_add_from.setOnClickListener {
-        adapters.add()
+            adapters.add()
         }
 
         counter_show.setOnClickListener {
@@ -103,9 +112,15 @@ class NewEmployeeFragment : Fragment() {
             val degree = new_employee_degree.text.toString()
             val title = new_employee_academic_title.text.toString()
 
+            firebaseStore = FirebaseStorage.getInstance()
+            storageReference = FirebaseStorage.getInstance().reference
+
+
+            uploadImage()
+
             val myEmployee = NewEmployeeModel(
                 id,
-                person,
+                filePath.toString(),
                 name,
                 surname,
                 age,
@@ -114,7 +129,7 @@ class NewEmployeeFragment : Fragment() {
                 experience,
                 degree,
                 title,
-                adatapers.getBookingRoomModels()
+                adapters.getBookingRoomModels()
             )
             myDatabase.push().setValue(myEmployee)
         }
@@ -147,6 +162,8 @@ class NewEmployeeFragment : Fragment() {
                 files.add(photo)
                 names.add(photo.toString().substring(0, 15))
 
+                this.filePath = uri
+
                 Glide
                     .with(employee_add_image.context)
                     .load(uri.toString())
@@ -166,5 +183,42 @@ class NewEmployeeFragment : Fragment() {
         cursor.close()
         return res
 
+    }
+
+    private fun addUploadRecordToDb(uri: String) {
+        val db = FirebaseFirestore.getInstance()
+
+        val data = HashMap<String, Any>()
+        data["imageUrl"] = uri
+
+        db.collection("posts")
+            .add(data)
+            .addOnSuccessListener { documentReference ->
+                Toast.makeText(context, "Saved to DB", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(context, "Error saving to DB", Toast.LENGTH_LONG).show()
+            }
+    }
+
+    private fun uploadImage() {
+        if (filePath != null) {
+            val a = "uploads/" + UUID.randomUUID().toString()
+            val bb =  storageReference?.child(a)
+            storageReference?.child(a)!!.putFile(filePath!!)
+                .addOnSuccessListener {
+
+                        println()
+                }.addOnCompleteListener { task ->
+                    bb!!.downloadUrl.addOnSuccessListener {
+                        println()
+                    }
+                }.addOnFailureListener {
+                    println()
+                }
+
+        } else {
+            Toast.makeText(context, "Please Upload an Image", Toast.LENGTH_SHORT).show()
+        }
     }
 }

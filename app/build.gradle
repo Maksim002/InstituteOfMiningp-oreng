@@ -53,13 +53,19 @@ dependencies {
     // expandable
     implementation 'at.blogc:expandabletextview:1.0.5'
 
+
+
     // pager
     implementation "androidx.viewpager2:viewpager2:1.0.0-beta02"
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.4.3'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //Player

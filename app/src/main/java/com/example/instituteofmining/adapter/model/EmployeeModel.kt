@@ -1,18 +1,15 @@
 package com.example.instituteofmining.adapter.model
 
-import android.text.Editable
-import android.widget.EditText
-
-class EmployeeModel (
+class EmployeeModel(
     val id: Int,
     var beginning: String,
-    val ending: String,
-    val type_of_qualification: String,
-    val topic: String,
-    val laboriousness: String,
-    val venue: String,
-    val certificate: String,
-    val reward: String,
-    val issued_by_whom: String,
-    val issued: String
+    var ending: String,
+    var type_of_qualification: String,
+    var topic: String,
+    var laboriousness: String,
+    var venue: String,
+    var certificate: String,
+    var reward: String,
+    var issued_by_whom: String,
+    var issued: String
 )
