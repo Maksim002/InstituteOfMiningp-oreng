@@ -8,12 +8,12 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.loader.content.CursorLoader
 import com.bumptech.glide.Glide
 import com.example.instituteofmining.R
@@ -36,10 +36,12 @@ class NewEmployeeFragment : Fragment() {
     private val STORAGE_PERMISION_CODE: Int = 1
     private val IMAGE_PICK_CODE = 10
 
+    private lateinit var list: EmployeeModel
+
     private var files = ArrayList<MultipartBody.Part>()
     private var names = ArrayList<String>()
 
-    val list: ArrayList<EmployeeModel> = ArrayList()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,8 +53,8 @@ class NewEmployeeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-        initRecyclerView()
         adatapers = NewEmployeeAdapter()
+        list = EmployeeModel(adatapers.itemCount,"","","","","","","","","","")
 
         employee_add_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -77,19 +79,16 @@ class NewEmployeeFragment : Fragment() {
         }
     }
 
-    fun init(){
+    fun init() {
         myDatabase = FirebaseDatabase.getInstance().getReference(employee)
 
-        val adapters = NewEmployeeAdapter()
-        list.add(EmployeeModel("", "", "","","","","", "","","", ""))
 
-        adapters.update(list)
+        val adapters = NewEmployeeAdapter()
+        adapters.add()
         new_employee_recycler.adapter = adapters
 
         new_employee_add_from.setOnClickListener {
-            val homeRoom = adapters.getBookingRoomModels()
-            homeRoom.add(EmployeeModel( "" + 1, "" + 1, ""+ 1,""+ 1,""+ 1,""+ 1,""+ 1,""+ 1,""+ 1,""+ 1,""+ 1))
-            adapters.update(homeRoom)
+        adapters.add()
         }
 
         counter_show.setOnClickListener {
@@ -104,9 +103,20 @@ class NewEmployeeFragment : Fragment() {
             val degree = new_employee_degree.text.toString()
             val title = new_employee_academic_title.text.toString()
 
-            val myEmployee = NewEmployeeModel(id, person, name, surname, age, education, graduated, experience, degree, title, list)
+            val myEmployee = NewEmployeeModel(
+                id,
+                person,
+                name,
+                surname,
+                age,
+                education,
+                graduated,
+                experience,
+                degree,
+                title,
+                adatapers.getBookingRoomModels()
+            )
             myDatabase.push().setValue(myEmployee)
-
         }
     }
 
@@ -155,10 +165,6 @@ class NewEmployeeFragment : Fragment() {
         val res = cursor.getString(columnIndex)
         cursor.close()
         return res
-
-    }
-
-    private fun initRecyclerView(){
 
     }
 }

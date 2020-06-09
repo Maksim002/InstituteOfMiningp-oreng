@@ -4,8 +4,8 @@ import android.text.Editable
 import android.widget.EditText
 
 class EmployeeModel (
-    val id: String,
-    val beginning: String,
+    val id: Int,
+    var beginning: String,
     val ending: String,
     val type_of_qualification: String,
     val topic: String,

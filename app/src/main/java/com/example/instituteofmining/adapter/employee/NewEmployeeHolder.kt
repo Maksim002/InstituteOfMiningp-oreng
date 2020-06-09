@@ -1,26 +1,23 @@
 package com.example.instituteofmining.adapter.employee
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
-import android.os.Build
 import android.view.MotionEvent
 import android.view.View
-import androidx.annotation.RequiresApi
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instituteofmining.adapter.model.EmployeeModel
-import com.example.instituteofmining.staff.NewEmployeeFragment
 import com.example.instituteofmining.utils.convertDate
 import kotlinx.android.synthetic.main.item_new_employee.view.*
-import java.lang.Exception
 import java.util.*
-import kotlin.collections.ArrayList
 
 class NewEmployeeHolder (itemView: View): RecyclerView.ViewHolder(itemView){
 
-    @SuppressLint("ClickableViewAccessibility")
-    @RequiresApi(Build.VERSION_CODES.N)
     fun bind(item: EmployeeModel) {
+
+        itemView.order_date_from.onFocusChangeListener =
+            View.OnFocusChangeListener { view: View?, b: Boolean ->
+                    item.beginning = itemView.order_date_from.text.toString()
+            }
+
 
         itemView.order_date_from.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_UP) {

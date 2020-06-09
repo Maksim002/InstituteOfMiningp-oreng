@@ -11,5 +11,5 @@ class NewEmployeeModel(
     val experience: String,
     val degree: String,
     val title: String,
-    val list: ArrayList<EmployeeModel>
+    val list: MutableList<EmployeeModel>
 )
