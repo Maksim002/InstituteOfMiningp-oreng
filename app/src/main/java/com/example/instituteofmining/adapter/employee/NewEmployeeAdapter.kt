@@ -39,6 +39,7 @@ class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
     override fun onBindViewHolder(holder: NewEmployeeHolder, position: Int) {
         holder.bind(item[position])
 
+
         holder.itemView.new_employee_clear.setOnClickListener {
             delete(item.get(position))
         }

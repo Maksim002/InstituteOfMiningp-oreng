@@ -88,22 +88,41 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/new_employee_age_out"
+                            android:id="@+id/new_employee_patronymic_out"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Возраст">
+                            android:hint="Отчество">
 
                             <EditText
-                                android:id="@+id/new_employee_age"
+                                android:id="@+id/new_employee_patronymic"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="8dp"
                                 android:editable="false"
-                                android:inputType="number"
+                                android:inputType="textEmailAddress"
                                 android:textSize="16dp" />
                         </com.google.android.material.textfield.TextInputLayout>
+
                     </LinearLayout>
                 </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/new_employee_experience_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="2dp"
+                    android:hint="Стаж работы">
+
+                    <EditText
+                        android:id="@+id/new_employee_experience"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:editable="false"
+                        android:inputType="textEmailAddress"
+                        android:textSize="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/new_employee_education_out"
@@ -133,24 +152,6 @@
 
                     <EditText
                         android:id="@+id/new_employee_graduated"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="8dp"
-                        android:editable="false"
-                        android:inputType="textEmailAddress"
-                        android:textSize="16dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/new_employee_experience_out"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="2dp"
-                    android:hint="Стаж работы">
-
-                    <EditText
-                        android:id="@+id/new_employee_experience"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawablePadding="8dp"

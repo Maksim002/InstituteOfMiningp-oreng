@@ -4,21 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.model.NewEmployeeModel
 import com.example.instituteofmining.adapter.staff.StaffAdapter
+import com.example.instituteofmining.adapter.staff.StaffClickListener
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_staff.*
 
-class StaffFragment : Fragment() {
+class StaffFragment : Fragment(){
     private var myAdapter = StaffAdapter()
     private lateinit var myDatabase: DatabaseReference
     private val employee = "employee"
-
     private var list: ArrayList<NewEmployeeModel> = arrayListOf()
-    private lateinit var sModel: NewEmployeeModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,7 +41,8 @@ class StaffFragment : Fragment() {
 
     private fun getDtataFromDB(){
 
-        val vListener: ValueEventListener = object : ValueEventListener {
+        val vListener: ValueEventListener = object : ValueEventListener,
+            StaffClickListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (list.size > 0) list.clear()
                 list = ArrayList()
@@ -49,7 +50,7 @@ class StaffFragment : Fragment() {
                     val employee = data.getValue(NewEmployeeModel::class.java)
                    if (data != null){
                        list.add(employee!!)
-                       myAdapter.update(list)
+                       myAdapter.update(this, list)
                    }
 
                 }
@@ -57,6 +58,13 @@ class StaffFragment : Fragment() {
             }
             override fun onCancelled(databaseError: DatabaseError) {
 
+            }
+
+            override fun onClickRequest(item: NewEmployeeModel) {
+                Toast.makeText(context, item.toString(), Toast.LENGTH_LONG).show()
+                val binder = Bundle()
+                binder.putSerializable("item", item)
+                findNavController().navigate(R.id.navigation_description, binder)
             }
         }
         myDatabase.addValueEventListener(vListener)

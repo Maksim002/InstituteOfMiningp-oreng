@@ -157,9 +157,9 @@ class NewEmployeeFragment : Fragment() {
                     myStorage!!.downloadUrl.addOnSuccessListener {
                         if (task.isSuccessful) {
                             val id = myDatabase.key.toString()
+                            val patronymic = new_employee_patronymic.text.toString()
                             val name = new_employee_name.text.toString()
                             val surname = new_employee_surname.text.toString()
-                            val age = new_employee_age.text.toString()
                             val education = new_employee_education.text.toString()
                             val graduated = new_employee_graduated.text.toString()
                             val experience = new_employee_experience.text.toString()
@@ -171,8 +171,8 @@ class NewEmployeeFragment : Fragment() {
                                 it.toString(),
                                 name,
                                 surname,
-                                age,
                                 education,
+                                patronymic,
                                 graduated,
                                 experience,
                                 degree,

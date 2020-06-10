@@ -12,17 +12,21 @@ import kotlinx.android.synthetic.main.item_staff.view.*
 
 class StaffHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-    fun bind(get: NewEmployeeModel) {
-        itemView.staff_name.text = get.name + " " + get.surname
+    fun bind(item: NewEmployeeModel, listener: StaffClickListener) {
+        itemView.staff_name.text = item.name + " " + item.surname + " " + item.patronymic
+
+        itemView.setOnClickListener {
+            listener.onClickRequest(item)
+        }
 
         var requestOptions = RequestOptions()
         requestOptions = requestOptions.transforms(CenterCrop(), RoundedCorners(16))
 
         Glide
             .with(itemView.staff_person.context)
-            .load(get.person)
+            .load(item.person)
             .centerCrop()
             .apply(requestOptions)
-            .into(itemView.staff_person);
+            .into(itemView.staff_person)
     }
 }

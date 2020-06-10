@@ -1,13 +1,13 @@
 package com.example.instituteofmining.adapter.model
 
-import kotlin.math.exp
+import java.io.Serializable
 
-class NewEmployeeModel {
+class NewEmployeeModel : Serializable {
     val id: String
     val person: String
     val name: String
+    val patronymic: String
     val surname: String
-    val age: String
     val education:String
     val graduated: String
     val experience: String
@@ -15,15 +15,14 @@ class NewEmployeeModel {
     val title: String
     var list: MutableList<EmployeeModel>?
     constructor():this("","","","","","","","","","",null){
-
     }
     constructor(
         id: String,
         person: String,
         name: String,
         surname: String,
-        age: String,
         education: String,
+        patronymic: String,
         graduated: String,
         experience: String,
         degree: String,
@@ -34,7 +33,7 @@ class NewEmployeeModel {
         this.person = person
         this.name = name
         this.surname = surname
-        this.age = age
+        this.patronymic = patronymic
         this.education = education
         this.graduated= graduated
         this.experience = experience
@@ -42,6 +41,4 @@ class NewEmployeeModel {
         this.title = title
         this.list = list
     }
-
-
 }
