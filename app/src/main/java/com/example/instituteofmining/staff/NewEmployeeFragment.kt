@@ -20,11 +20,9 @@ import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.employee.NewEmployeeAdapter
 import com.example.instituteofmining.adapter.model.EmployeeModel
 import com.example.instituteofmining.adapter.model.NewEmployeeModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import com.example.instituteofmining.main.MainActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_new_employee.*
@@ -37,21 +35,15 @@ import kotlin.collections.ArrayList
 
 class NewEmployeeFragment : Fragment() {
     private lateinit var myDatabase: DatabaseReference
+    private val employee = "employee"
     private var filePath: Uri? = null
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
-    private val employee = "employee"
-    val adapters = NewEmployeeAdapter()
-
+    val my_adapter = NewEmployeeAdapter()
     private val STORAGE_PERMISION_CODE: Int = 1
     private val IMAGE_PICK_CODE = 10
-
-    private lateinit var list: EmployeeModel
-
     private var files = ArrayList<MultipartBody.Part>()
     private var names = ArrayList<String>()
-
-    private lateinit var myUrlImage: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,8 +55,6 @@ class NewEmployeeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
-
-        list = EmployeeModel(adapters.itemCount, "", "", "", "", "", "", "", "", "", "")
 
         employee_add_image.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -92,46 +82,15 @@ class NewEmployeeFragment : Fragment() {
     fun init() {
         myDatabase = FirebaseDatabase.getInstance().getReference(employee)
 
-        val adapters = NewEmployeeAdapter()
-        adapters.add()
-        new_employee_recycler.adapter = adapters
+        my_adapter.add()
+        new_employee_recycler.adapter = my_adapter
 
         new_employee_add_from.setOnClickListener {
-            adapters.add()
+            my_adapter.add()
         }
 
         counter_show.setOnClickListener {
-            val id = myDatabase.key.toString()
-            val name = new_employee_name.text.toString()
-            val surname = new_employee_surname.text.toString()
-            val age = new_employee_age.text.toString()
-            val person = employee_add_image.drawable.toString()
-            val education = new_employee_education.text.toString()
-            val graduated = new_employee_graduated.text.toString()
-            val experience = new_employee_experience.text.toString()
-            val degree = new_employee_degree.text.toString()
-            val title = new_employee_academic_title.text.toString()
-
-            firebaseStore = FirebaseStorage.getInstance()
-            storageReference = FirebaseStorage.getInstance().reference
-
-
             uploadImage()
-
-            val myEmployee = NewEmployeeModel(
-                id,
-                filePath.toString(),
-                name,
-                surname,
-                age,
-                education,
-                graduated,
-                experience,
-                degree,
-                title,
-                adapters.getBookingRoomModels()
-            )
-            myDatabase.push().setValue(myEmployee)
         }
     }
 
@@ -185,40 +144,52 @@ class NewEmployeeFragment : Fragment() {
 
     }
 
-    private fun addUploadRecordToDb(uri: String) {
-        val db = FirebaseFirestore.getInstance()
-
-        val data = HashMap<String, Any>()
-        data["imageUrl"] = uri
-
-        db.collection("posts")
-            .add(data)
-            .addOnSuccessListener { documentReference ->
-                Toast.makeText(context, "Saved to DB", Toast.LENGTH_LONG).show()
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(context, "Error saving to DB", Toast.LENGTH_LONG).show()
-            }
-    }
-
     private fun uploadImage() {
+        firebaseStore = FirebaseStorage.getInstance()
+        storageReference = FirebaseStorage.getInstance().reference
         if (filePath != null) {
             val a = "uploads/" + UUID.randomUUID().toString()
-            val bb =  storageReference?.child(a)
+            val myStorage = storageReference?.child(a)
+            MainActivity.alert.show()
             storageReference?.child(a)!!.putFile(filePath!!)
                 .addOnSuccessListener {
-
-                        println()
                 }.addOnCompleteListener { task ->
-                    bb!!.downloadUrl.addOnSuccessListener {
-                        println()
+                    myStorage!!.downloadUrl.addOnSuccessListener {
+                        if (task.isSuccessful) {
+                            val id = myDatabase.key.toString()
+                            val name = new_employee_name.text.toString()
+                            val surname = new_employee_surname.text.toString()
+                            val age = new_employee_age.text.toString()
+                            val education = new_employee_education.text.toString()
+                            val graduated = new_employee_graduated.text.toString()
+                            val experience = new_employee_experience.text.toString()
+                            val degree = new_employee_degree.text.toString()
+                            val title = new_employee_academic_title.text.toString()
+
+                            val myEmployee = NewEmployeeModel(
+                                id,
+                                it.toString(),
+                                name,
+                                surname,
+                                age,
+                                education,
+                                graduated,
+                                experience,
+                                degree,
+                                title,
+                                my_adapter.getBookingRoomModels()
+                            )
+                            myDatabase.push().setValue(myEmployee)
+                            MainActivity.alert.hide()
+                        }
                     }
                 }.addOnFailureListener {
-                    println()
+                    Toast.makeText(context, "Archivo no seleccionado", Toast.LENGTH_SHORT).show()
+                    MainActivity.alert.hide()
                 }
 
         } else {
-            Toast.makeText(context, "Please Upload an Image", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Initialization has not passed", Toast.LENGTH_SHORT).show()
         }
     }
 }

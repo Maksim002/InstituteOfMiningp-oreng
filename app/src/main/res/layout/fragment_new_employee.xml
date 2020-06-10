@@ -45,7 +45,7 @@
                             android:layout_marginLeft="1dp"
                             android:layout_marginRight="1dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/ic_persons"
+                            android:src="@drawable/ic_person"
                             tools:ignore="ContentDescription" />
                     </androidx.cardview.widget.CardView>
 
