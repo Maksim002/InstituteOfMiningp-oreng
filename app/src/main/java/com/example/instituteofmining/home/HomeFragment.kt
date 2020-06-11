@@ -37,7 +37,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getExpandableTextViewE(view)
 
         yotube = view.findViewById(R.id.youtube_player_view)
 
@@ -69,6 +68,8 @@ class HomeFragment : Fragment() {
 
     private fun initViewPager() {
         val list: ArrayList<HomeSliderModel> = ArrayList()
+        list.add(HomeSliderModel("http://ksmu.kg/wp-content/uploads/2019/06/444444.jpg"))
+        list.add(HomeSliderModel("http://ksmu.kg/wp-content/uploads/2019/06/45454545.jpg"))
         list.add(HomeSliderModel("http://itimm.ksmu.kg/wp-content/uploads/2019/06/IMG_0849.jpg"))
         list.add(HomeSliderModel("http://itimm.ksmu.kg/wp-content/uploads/2019/06/IMG_0850.jpg"))
         list.add(HomeSliderModel("http://itimm.ksmu.kg/wp-content/uploads/2019/06/IMG_0856.jpg"))
@@ -106,27 +107,6 @@ class HomeFragment : Fragment() {
                 val holder = Handler()
                 holder.removeCallbacks(simpleRandom)
                 holder.postDelayed(simpleRandom, 6000)
-            }
-        })
-    }
-
-    private fun getExpandableTextViewE(view: View) {
-        val expandableTextViewE = view.findViewById<ExpandableTextView>(R.id.home_title_name)
-        expandableTextViewE.setAnimationDuration(5L)
-        expandableTextViewE.setInterpolator(OvershootInterpolator())
-        expandableTextViewE.setExpandInterpolator(OvershootInterpolator())
-        expandableTextViewE.setCollapseInterpolator(OvershootInterpolator())
-        expandableTextViewE.setOnClickListener(View.OnClickListener {
-            expandableTextViewE.setText(if (expandableTextViewE.isExpanded()) R.string.short_description else R.string.home_full_description)
-            expandableTextViewE.toggle()
-        })
-        expandableTextViewE.setOnClickListener(View.OnClickListener {
-            if (expandableTextViewE.isExpanded()) {
-                expandableTextViewE.collapse()
-                expandableTextViewE.setText(R.string.home_full_description)
-            } else {
-                expandableTextViewE.expand()
-                expandableTextViewE.setText(R.string.short_description)
             }
         })
     }

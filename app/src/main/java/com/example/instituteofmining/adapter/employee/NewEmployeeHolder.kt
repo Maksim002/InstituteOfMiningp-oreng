@@ -1,16 +1,16 @@
 package com.example.instituteofmining.adapter.employee
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MotionEvent
 import android.view.View
-import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.instituteofmining.adapter.model.EmployeeModel
+import com.example.instituteofmining.utils.MyUtils
 import com.example.instituteofmining.utils.convertDate
 import kotlinx.android.synthetic.main.item_new_employee.view.*
-import java.lang.Exception
 import java.util.*
 
 
@@ -148,7 +148,6 @@ class NewEmployeeHolder (itemView: View): RecyclerView.ViewHolder(itemView){
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
-
 
         itemView.order_date_from.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_UP) {

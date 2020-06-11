@@ -1,7 +1,10 @@
 package com.example.instituteofmining.main
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
 import android.os.Bundle
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.instituteofmining.R
 import com.example.instituteofmining.utils.LoadingAlert
 import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         alert = LoadingAlert(this)
+
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
