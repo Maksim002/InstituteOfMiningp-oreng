@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="16dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Награда"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#060683"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выдан"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#060683"
+            android:textSize="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/description_increase_reward"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Начало"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#001"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:id="@+id/description_increase_issued"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Выдан"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="#001"
+            android:textSize="14dp"/>
+    </LinearLayout>
+    <include layout="@layout/item_model_image"
+        android:id="@+id/image_model"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Кем выдан"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="#060683"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/description_increase_issued_by_whom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Выдан"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textColor="#001"
+        android:textSize="14dp"/>
+
+    <include layout="@layout/item_model_image"
+        android:id="@+id/image_model"/>
+</LinearLayout>

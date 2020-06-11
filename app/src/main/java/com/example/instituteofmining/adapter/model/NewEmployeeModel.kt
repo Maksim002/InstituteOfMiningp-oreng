@@ -13,7 +13,7 @@ class NewEmployeeModel : Serializable {
     val experience: String
     val degree: String
     val title: String
-    var list: MutableList<EmployeeModel>?
+    var list: ArrayList<EmployeeModel>?
     constructor():this("","","","","","","","","","",null){
     }
     constructor(
@@ -27,7 +27,7 @@ class NewEmployeeModel : Serializable {
         experience: String,
         degree: String,
         title: String,
-        list: MutableList<EmployeeModel>?
+        list: ArrayList<EmployeeModel>?
     ) {
         this.id = id
         this.person = person

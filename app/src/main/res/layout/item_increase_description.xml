@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+   android:layout_margin="16dp"
+    android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Трудоемкость"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="#060683"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/description_increase_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Тема"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:textColor="#001"
+                android:textSize="14dp"/>
+
+            <include layout="@layout/item_model_image"
+                android:id="@+id/image_model"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Начало"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#060683"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Начало"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#060683"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/description_increase_beginning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/description_increase_ending"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+            <include layout="@layout/item_model_image"
+                android:id="@+id/image_model"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Вид повыш. квалификации"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#060683"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Свидетельство, удостоверение"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#060683"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/description_increase_type_of_qualification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/description_increase_certificate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+            <include layout="@layout/item_model_image"
+                android:id="@+id/image_model"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Трудоемкость"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#060683"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Место проведения"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#060683"
+                    android:textSize="16dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/description_increase_laboriousness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+
+                <TextView
+                    android:id="@+id/description_increase_venue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Начало"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textColor="#001"
+                    android:textSize="14dp"/>
+            </LinearLayout>
+            <include layout="@layout/item_model_image"
+                android:id="@+id/image_model"/>
+        </LinearLayout>
+</LinearLayout>

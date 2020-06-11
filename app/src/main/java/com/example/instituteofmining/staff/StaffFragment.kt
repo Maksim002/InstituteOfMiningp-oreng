@@ -11,6 +11,7 @@ import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.model.NewEmployeeModel
 import com.example.instituteofmining.adapter.staff.StaffAdapter
 import com.example.instituteofmining.adapter.staff.StaffClickListener
+import com.example.instituteofmining.main.MainActivity
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_staff.*
 
@@ -40,7 +41,7 @@ class StaffFragment : Fragment(){
     }
 
     private fun getDtataFromDB(){
-
+        MainActivity.alert.show()
         val vListener: ValueEventListener = object : ValueEventListener,
             StaffClickListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -55,6 +56,7 @@ class StaffFragment : Fragment(){
 
                 }
                 myAdapter.notifyDataSetChanged()
+                MainActivity.alert.hide()
             }
             override fun onCancelled(databaseError: DatabaseError) {
 

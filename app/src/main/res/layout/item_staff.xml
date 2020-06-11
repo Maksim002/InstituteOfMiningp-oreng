@@ -6,6 +6,13 @@
     android:layout_margin="1dp"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0.1dp"
+        android:background="#060683"
+        android:orientation="vertical">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +28,7 @@
             <ImageView
                 android:id="@+id/staff_person"
                 android:layout_width="145dp"
-                android:layout_height="170dp"
+                android:layout_height="190dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_person" />
 
@@ -31,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:textStyle="bold"
                 android:minLines="2"
                 android:maxLines="2"
                 android:text="Title"
@@ -38,4 +46,5 @@
                 android:textSize="16dp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </LinearLayout>

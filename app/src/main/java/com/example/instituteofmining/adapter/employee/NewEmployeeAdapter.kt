@@ -9,10 +9,10 @@ import kotlinx.android.synthetic.main.item_new_employee.view.*
 
 class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
 
-    private var item: MutableList<EmployeeModel> = ArrayList()
+    private var item: ArrayList<EmployeeModel> = ArrayList()
     private var count = 0
 
-    fun getBookingRoomModels(): MutableList<EmployeeModel> {
+    fun getBookingRoomModels(): ArrayList<EmployeeModel> {
         return this.item
     }
 
