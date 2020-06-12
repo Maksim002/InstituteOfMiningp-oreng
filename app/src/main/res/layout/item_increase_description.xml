@@ -3,12 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-   android:layout_margin="16dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginLeft="16dp"
     android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#060683"
+        android:padding="2dp"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="vertical">
 
             <TextView
@@ -17,10 +34,10 @@
                 android:text="Трудоемкость"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="2dp"
                 android:gravity="center"
                 android:textColor="#060683"
-                android:textSize="16dp"/>
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/description_increase_topic"
@@ -55,7 +72,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="#060683"
-                android:textSize="16dp"/>
+                android:textSize="15dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -65,12 +82,14 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:textColor="#060683"
-                android:textSize="16dp"/>
+                android:textSize="15dp"/>
         </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -116,7 +135,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#060683"
-                    android:textSize="16dp"/>
+                    android:textSize="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -126,12 +145,14 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#060683"
-                    android:textSize="16dp"/>
+                    android:textSize="15dp"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -177,7 +198,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#060683"
-                    android:textSize="16dp"/>
+                    android:textSize="15dp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -187,7 +208,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:textColor="#060683"
-                    android:textSize="16dp"/>
+                    android:textSize="15dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -224,4 +245,6 @@
             <include layout="@layout/item_model_image"
                 android:id="@+id/image_model"/>
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </LinearLayout>

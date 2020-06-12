@@ -7,13 +7,19 @@ import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.model.EmployeeModel
 import kotlinx.android.synthetic.main.item_new_employee.view.*
 
-class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
+class NewEmployeeAdapter() : RecyclerView.Adapter<NewEmployeeHolder>() {
+
+    private lateinit var listener: NewClickListener
 
     private var item: ArrayList<EmployeeModel> = ArrayList()
     private var count = 0
 
     fun getBookingRoomModels(): ArrayList<EmployeeModel> {
         return this.item
+    }
+
+    fun update(listener: NewClickListener){
+        this.listener = listener
     }
 
     fun delete(position: EmployeeModel){
@@ -37,7 +43,7 @@ class NewEmployeeAdapter : RecyclerView.Adapter<NewEmployeeHolder>() {
     }
 
     override fun onBindViewHolder(holder: NewEmployeeHolder, position: Int) {
-        holder.bind(item[position])
+        holder.bind(item[position], listener)
 
 
         holder.itemView.new_employee_clear.setOnClickListener {

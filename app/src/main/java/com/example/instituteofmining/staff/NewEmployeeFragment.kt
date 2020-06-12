@@ -17,10 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.loader.content.CursorLoader
 import com.bumptech.glide.Glide
 import com.example.instituteofmining.R
+import com.example.instituteofmining.adapter.employee.NewClickListener
 import com.example.instituteofmining.adapter.employee.NewEmployeeAdapter
-import com.example.instituteofmining.adapter.model.EmployeeModel
 import com.example.instituteofmining.adapter.model.NewEmployeeModel
 import com.example.instituteofmining.main.MainActivity
+import com.example.instituteofmining.utils.MyUtils
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -33,7 +34,7 @@ import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
 
-class NewEmployeeFragment : Fragment() {
+class NewEmployeeFragment : Fragment(), NewClickListener {
     private lateinit var myDatabase: DatabaseReference
     private val employee = "employee"
     private var filePath: Uri? = null
@@ -82,6 +83,7 @@ class NewEmployeeFragment : Fragment() {
     fun init() {
         myDatabase = FirebaseDatabase.getInstance().getReference(employee)
 
+        my_adapter.update(this)
         my_adapter.add()
         new_employee_recycler.adapter = my_adapter
 
@@ -191,5 +193,10 @@ class NewEmployeeFragment : Fragment() {
         } else {
             Toast.makeText(context, "Initialization has not passed", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onNewClickListener() {
+            MyUtils.hideKeyboard(this.requireActivity(), this.requireView())
+
     }
 }
