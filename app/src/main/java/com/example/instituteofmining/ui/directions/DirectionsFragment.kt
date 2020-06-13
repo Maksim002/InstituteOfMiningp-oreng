@@ -1,4 +1,4 @@
-package com.example.instituteofmining.directions
+package com.example.instituteofmining.ui.directions
 
 import android.content.Intent
 import android.net.Uri
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.instituteofmining.R
 import kotlinx.android.synthetic.main.fragment_directions.*
 
@@ -24,6 +25,10 @@ class DirectionsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init()
+
+        directions_information_technology.setOnClickListener {
+            findNavController().navigate(R.id.navigation_Information_technology)
+        }
     }
 
     private fun init() {

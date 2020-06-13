@@ -1,4 +1,4 @@
-package com.example.instituteofmining.home
+package com.example.instituteofmining.ui.home
 
 
 import android.os.Bundle
@@ -6,13 +6,11 @@ import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.OvershootInterpolator
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
-import at.blogc.android.views.ExpandableTextView
 import com.example.instituteofmining.R
 import com.example.instituteofmining.adapter.model.HomeSliderModel
 import com.example.instituteofmining.adapter.home.HomeSliderAdapter

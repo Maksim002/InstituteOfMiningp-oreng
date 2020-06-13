@@ -186,7 +186,7 @@
                         android:id="@+id/profile_reward"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Награда (не обязательно)" />
+                        android:hint="Награда" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -201,7 +201,7 @@
                         android:id="@+id/profile_issued_by_whom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Кем выдан (не обязательно)" />
+                        android:hint="Кем выдан" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -217,7 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:editable="false"
-                        android:hint="Дата окончание (не обязательно)"
+                        android:hint="Дата окончание"
                         tools:text="20.06.2020"
                         android:maxLines="1" />
 

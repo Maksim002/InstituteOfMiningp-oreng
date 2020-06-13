@@ -5,9 +5,9 @@ import java.io.Serializable
 class NewEmployeeModel : Serializable {
     val id: String
     val person: String
-    val name: String
-    val patronymic: String
     val surname: String
+    val patronymic: String
+    val name: String
     val education:String
     val graduated: String
     val experience: String

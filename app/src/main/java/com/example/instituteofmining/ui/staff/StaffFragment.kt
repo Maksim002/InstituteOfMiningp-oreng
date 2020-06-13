@@ -1,10 +1,9 @@
-package com.example.instituteofmining.staff
+package com.example.instituteofmining.ui.staff
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.instituteofmining.R
@@ -58,12 +57,9 @@ class StaffFragment : Fragment(){
                 myAdapter.notifyDataSetChanged()
                 MainActivity.alert.hide()
             }
-            override fun onCancelled(databaseError: DatabaseError) {
-
-            }
+            override fun onCancelled(databaseError: DatabaseError) {}
 
             override fun onClickRequest(item: NewEmployeeModel) {
-                Toast.makeText(context, item.toString(), Toast.LENGTH_LONG).show()
                 val binder = Bundle()
                 binder.putSerializable("item", item)
                 findNavController().navigate(R.id.navigation_description, binder)

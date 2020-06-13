@@ -1,4 +1,4 @@
-package com.example.instituteofmining.staff
+package com.example.instituteofmining.ui.staff
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -44,13 +44,10 @@ class DescriptionFragment : Fragment() {
         if (this.item.list != null) {
             val lista = ArrayList<EmployeeModel>()
             this.item.list!!.forEach {
-                if (it.beginning.isNotEmpty()|| it.topic.isNotEmpty()) {
+                if (it.beginning.isNotEmpty()) {
                     lista.add(it)
                 }
             }
-            myReward.update(lista)
-            description_reward_recycler.adapter = myReward
-
             myIncreaseAdapter.update(lista)
             description_increase_recycler.adapter = myIncreaseAdapter
 
@@ -61,6 +58,16 @@ class DescriptionFragment : Fragment() {
             description_title_rewards.visibility = View.GONE
         }
 
+        if (this.item.list != null) {
+            val lista = ArrayList<EmployeeModel>()
+            this.item.list!!.forEach {
+                if (it.issued_by_whom.isNotEmpty()) {
+                    lista.add(it)
+                }
+            }
+            myReward.update(lista)
+            description_reward_recycler.adapter = myReward
+        }
 
     }
 

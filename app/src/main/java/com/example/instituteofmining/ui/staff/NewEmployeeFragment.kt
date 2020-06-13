@@ -1,4 +1,4 @@
-package com.example.instituteofmining.staff
+package com.example.instituteofmining.ui.staff
 
 import android.Manifest
 import android.app.Activity
@@ -147,56 +147,112 @@ class NewEmployeeFragment : Fragment(), NewClickListener {
     }
 
     private fun uploadImage() {
-        firebaseStore = FirebaseStorage.getInstance()
-        storageReference = FirebaseStorage.getInstance().reference
-        if (filePath != null) {
-            val a = "uploads/" + UUID.randomUUID().toString()
-            val myStorage = storageReference?.child(a)
-            MainActivity.alert.show()
-            storageReference?.child(a)!!.putFile(filePath!!)
-                .addOnSuccessListener {
-                }.addOnCompleteListener { task ->
-                    myStorage!!.downloadUrl.addOnSuccessListener {
-                        if (task.isSuccessful) {
-                            val id = myDatabase.key.toString()
-                            val patronymic = new_employee_patronymic.text.toString()
-                            val name = new_employee_name.text.toString()
-                            val surname = new_employee_surname.text.toString()
-                            val education = new_employee_education.text.toString()
-                            val graduated = new_employee_graduated.text.toString()
-                            val experience = new_employee_experience.text.toString()
-                            val degree = new_employee_degree.text.toString()
-                            val title = new_employee_academic_title.text.toString()
+        if (validate()) {
+            firebaseStore = FirebaseStorage.getInstance()
+            storageReference = FirebaseStorage.getInstance().reference
+            if (filePath != null) {
+                val a = "uploads/" + UUID.randomUUID().toString()
+                val myStorage = storageReference?.child(a)
+                MainActivity.alert.show()
+                storageReference?.child(a)!!.putFile(filePath!!)
+                    .addOnSuccessListener {
+                    }.addOnCompleteListener { task ->
+                        myStorage!!.downloadUrl.addOnSuccessListener {
+                            if (task.isSuccessful) {
+                                val id = myDatabase.key.toString()
+                                val patronymic = new_employee_patronymic.text.toString()
+                                val name = new_employee_name.text.toString()
+                                val surname = new_employee_surname.text.toString()
+                                val education = new_employee_education.text.toString()
+                                val graduated = new_employee_graduated.text.toString()
+                                val experience = new_employee_experience.text.toString()
+                                val degree = new_employee_degree.text.toString()
+                                val title = new_employee_academic_title.text.toString()
 
-                            val myEmployee = NewEmployeeModel(
-                                id,
-                                it.toString(),
-                                name,
-                                surname,
-                                education,
-                                patronymic,
-                                graduated,
-                                experience,
-                                degree,
-                                title,
-                                my_adapter.getBookingRoomModels()
-                            )
-                            myDatabase.push().setValue(myEmployee)
-                            MainActivity.alert.hide()
+                                val myEmployee = NewEmployeeModel(
+                                    id,
+                                    it.toString(),
+                                    name,
+                                    surname,
+                                    education,
+                                    patronymic,
+                                    graduated,
+                                    experience,
+                                    degree,
+                                    title,
+                                    my_adapter.getBookingRoomModels()
+                                )
+                                myDatabase.push().setValue(myEmployee)
+                                MainActivity.alert.hide()
+                            }
                         }
+                    }.addOnFailureListener {
+                        Toast.makeText(context, "Выберите фото", Toast.LENGTH_SHORT).show()
+                        MainActivity.alert.hide()
                     }
-                }.addOnFailureListener {
-                    Toast.makeText(context, "Archivo no seleccionado", Toast.LENGTH_SHORT).show()
-                    MainActivity.alert.hide()
-                }
+            }
 
         } else {
-            Toast.makeText(context, "Initialization has not passed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Выберите фото", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onNewClickListener() {
-            MyUtils.hideKeyboard(this.requireActivity(), this.requireView())
+        MyUtils.hideKeyboard(this.requireActivity(), this.requireView())
 
+    }
+
+    private fun validate(): Boolean {
+        var valid = true
+        if (new_employee_name.text.toString().isEmpty()) {
+            new_employee_name_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_name_out.isErrorEnabled = false
+        }
+
+        if (new_employee_surname.text.toString().isEmpty()) {
+            new_employee_surname_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_surname_out.isErrorEnabled = false
+        }
+
+        if (new_employee_patronymic.text.toString().isEmpty()) {
+            new_employee_patronymic_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_patronymic_out.isErrorEnabled = false
+        }
+
+        if (new_employee_experience.text.toString().isEmpty()) {
+            new_employee_experience_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_experience_out.isErrorEnabled = false
+        }
+
+        if (new_employee_education.text.toString().isEmpty()) {
+            new_employee_education_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_education_out.isErrorEnabled = false
+        }
+
+        if (new_employee_graduated.text.toString().isEmpty()) {
+            new_employee_graduated_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_graduated_out.isErrorEnabled = false
+        }
+
+        if (new_employee_academic_title.text.toString().isEmpty()) {
+            new_employee_academic_title_out.error = "Заполните поле"
+            valid = false
+        } else {
+            new_employee_academic_title_out.isErrorEnabled = false
+        }
+
+        return valid
     }
 }

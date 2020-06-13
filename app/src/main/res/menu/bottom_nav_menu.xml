@@ -22,4 +22,9 @@
         android:icon="@drawable/ic_call_split_black_24dp"
         tools:ignore="MenuTitle" />
 
+    <item
+        android:id="@+id/navigation_entrant"
+        android:icon="@drawable/ic_baseline_how_to_reg_24"
+        tools:ignore="MenuTitle" />
+
 </menu>

@@ -39,8 +39,8 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:minLines="2"
-                android:maxLines="2"
+                android:minLines="3"
+                android:maxLines="3"
                 android:text="Title"
                 android:textColor="#3700B3"
                 android:textSize="16dp" />

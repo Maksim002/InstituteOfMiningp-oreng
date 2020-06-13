@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".life.LifeFragment">
+    tools:context=".ui.life.LifeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

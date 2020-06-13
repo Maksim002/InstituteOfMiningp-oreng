@@ -1,9 +1,6 @@
 package com.example.instituteofmining.main
 
-import android.content.Context
 import android.os.Bundle
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
@@ -13,7 +10,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.instituteofmining.R
 import com.example.instituteofmining.utils.LoadingAlert
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,7 +32,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home,
                 R.id.navigation_staff,
                 R.id.navigation_life,
-                R.id.navigation_directions
+                R.id.navigation_directions,
+                R.id.navigation_entrant
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

@@ -7,37 +7,49 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.instituteofmining.home.HomeFragment"
+        android:name="com.example.instituteofmining.ui.home.HomeFragment"
         android:label="Главная"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_staff"
-        android:name="com.example.instituteofmining.staff.StaffFragment"
+        android:name="com.example.instituteofmining.ui.staff.StaffFragment"
         android:label="Сотрудники"
         tools:layout="@layout/fragment_staff" />
 
     <fragment
         android:id="@+id/navigation_life"
-        android:name="com.example.instituteofmining.life.LifeFragment"
+        android:name="com.example.instituteofmining.ui.life.LifeFragment"
         android:label="Студенческая жизнь"
         tools:layout="@layout/fragment_life" />
 
     <fragment
         android:id="@+id/navigation_directions"
-        android:name="com.example.instituteofmining.directions.DirectionsFragment"
+        android:name="com.example.instituteofmining.ui.directions.DirectionsFragment"
         android:label="Специальности и направление"
         tools:layout="@layout/fragment_directions" />
 
     <fragment
         android:id="@+id/navigation_new_employee"
-        android:name="com.example.instituteofmining.staff.NewEmployeeFragment"
+        android:name="com.example.instituteofmining.ui.staff.NewEmployeeFragment"
         android:label="Новый сотрудник"
         tools:layout="@layout/fragment_new_employee" />
 
     <fragment
         android:id="@+id/navigation_description"
-        android:name="com.example.instituteofmining.staff.DescriptionFragment"
+        android:name="com.example.instituteofmining.ui.staff.DescriptionFragment"
         android:label="Информация о сотруднике"
         tools:layout="@layout/fragment_description" />
+
+    <fragment
+        android:id="@+id/navigation_Information_technology"
+        android:name="com.example.instituteofmining.ui.directions.InformationTechnologyFragment"
+        android:label="О кафедре"
+        tools:layout="@layout/fragment_information_technology" />
+
+    <fragment
+        android:id="@+id/navigation_entrant"
+        android:name="com.example.instituteofmining.ui.entrant.EntrantFragment"
+        android:label="fragment_entrant"
+        tools:layout="@layout/fragment_entrant" />
 </navigation>

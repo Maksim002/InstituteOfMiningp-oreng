@@ -1,4 +1,4 @@
-package com.example.instituteofmining.life
+package com.example.instituteofmining.ui.life
 
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.instituteofmining.R
-import kotlinx.android.synthetic.main.fragment_directions.*
 import kotlinx.android.synthetic.main.fragment_life.*
 
 class LifeFragment : Fragment() {
