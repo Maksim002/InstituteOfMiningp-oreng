@@ -53,8 +53,6 @@ dependencies {
     // expandable
     implementation 'at.blogc:expandabletextview:1.0.5'
 
-
-
     // pager
     implementation "androidx.viewpager2:viewpager2:1.0.0-beta02"
     implementation 'com.makeramen:roundedimageview:2.3.0'

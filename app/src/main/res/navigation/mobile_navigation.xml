@@ -50,6 +50,6 @@
     <fragment
         android:id="@+id/navigation_entrant"
         android:name="com.example.instituteofmining.ui.entrant.EntrantFragment"
-        android:label="fragment_entrant"
+        android:label="Абитуриенту"
         tools:layout="@layout/fragment_entrant" />
 </navigation>

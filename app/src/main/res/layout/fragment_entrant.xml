@@ -1,9 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.entrant.EntrantFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/description_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Абитуриенту"
+                    android:textStyle="bold"
+                    android:textColor="#3700B3"
+                    android:gravity="center"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entrant_text_1"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#001"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entrant_text_2"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#001"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entrant_text_3"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#001"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entrant_text_4"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#001"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entrant_text_5"
+                    android:layout_marginRight="16dp"
+                    android:textColor="#001"
+                    android:textSize="14sp"/>
+
+                <at.blogc.android.views.ExpandableTextView
+                    android:id="@+id/entrant_metallurgical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:text="ГОРНО-МЕТАЛЛУРГИЧЕСКИЙ ФАКУЛЬТЕТ"
+                    android:maxLines="5"
+                    android:textColor="#060683"
+                    android:ellipsize="end"
+                    app:animation_duration="750"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_divider"
+                    android:scaleType="fitXY"/>
+
+                <at.blogc.android.views.ExpandableTextView
+                    android:id="@+id/entrant_geological"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:text="ГЕОЛОГОРАЗВЕДОЧНЫЙ ФАКУЛЬТЕТ"
+                    android:maxLines="5"
+                    android:textColor="#060683"
+                    android:ellipsize="end"
+                    app:animation_duration="750"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_divider"
+                    android:scaleType="fitXY"/>
+
+                <at.blogc.android.views.ExpandableTextView
+                    android:id="@+id/entrant_magistracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:text="МАГИСТРАТУРА"
+                    android:maxLines="5"
+                    android:textColor="#060683"
+                    android:ellipsize="end"
+                    app:animation_duration="750"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_divider"
+                    android:scaleType="fitXY"/>
+
+                <at.blogc.android.views.ExpandableTextView
+                    android:id="@+id/entrant_in_absentia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:textStyle="bold"
+                    android:text="ФАКУЛЬТЕТ ЗАОЧНОГО ОБУЧЕНИЯ (ФЗО)"
+                    android:maxLines="5"
+                    android:textColor="#060683"
+                    android:ellipsize="end"
+                    app:animation_duration="750"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_divider"
+                    android:scaleType="fitXY"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16dp"
+                    android:text="@string/rules_text"
+                    android:textColor="#001"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#001"
+                    android:text="@string/entrant_text13"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#001"
+                    android:text="@string/entrant_text14"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
