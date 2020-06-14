@@ -28,7 +28,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Студенческая жизнь"
+                    android:text="Научная деятельность"
                     android:textColor="#060683"
                     android:textSize="18dp"
                     android:textStyle="bold" />
@@ -41,19 +41,6 @@
                     android:textColor="#001"
                     android:textSize="16dp" />
 
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <ImageView
-                        android:id="@+id/life_image_arbeit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,93 +49,83 @@
                     android:textColor="#001"
                     android:textSize="16dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <ImageView
-                        android:id="@+id/life_image_ansprache"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </androidx.cardview.widget.CardView>
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/life_text_3"
+                    android:text="@string/life_text_4"
+                    android:autoLink="web"
                     android:textColor="#001"
                     android:textSize="16dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Студенческая жизнь"
-                    android:textColor="#060683"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_5"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                <LinearLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
+                    android:text="@string/life_text_6"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                    <ImageView
-                        android:id="@+id/life_person"
-                        android:layout_width="140dp"
-                        android:layout_height="190dp"
-                        android:layout_gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_7"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:padding="8dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_8"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Чороева Токтосун Абдылдаевна"
-                        android:textColor="#060683"
-                        android:gravity="center"
-                        android:textSize="16dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_9"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Комендант студенческого общежития"
-                        android:textColor="#060683"
-                        android:layout_marginTop="8dp"
-                        android:gravity="center"
-                        android:textSize="12dp"/>
-                    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_10"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
-                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_10"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
                 <LinearLayout
                     android:id="@+id/life_map"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="16dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -159,7 +136,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Адрес: Ахунбаева 175"
+                        android:text="г.Бишкек, пр.Чуй 215"
                         android:layout_marginLeft="8dp"
                         android:autoLink="map"
                         android:textColor="#001"
@@ -180,7 +157,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Телефон: +996 (312) 54-51-91"
+                        android:text="Телефон: +996 (312) 61 19 21"
                         android:layout_marginLeft="8dp"
                         android:autoLink="all"
                         android:textColor="#001"
@@ -201,49 +178,172 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="E-mail: tchoroeva12@mail.ru"
+                        android:text="E-mail: itimm@gmail.com"
                         android:autoLink="email"
                         android:layout_marginLeft="8dp"
                         android:textColor="#001"
                         android:textSize="18dp"/>
                 </LinearLayout>
+            </LinearLayout>
 
-                <androidx.cardview.widget.CardView
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Материальная база"
+                    android:textColor="#060683"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_13"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_14"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_15"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_16"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/life_text_17"
+                    android:autoLink="web"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Рабочее место сотрудников"
+                    android:textColor="#060683"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     app:cardCornerRadius="8dp">
 
                     <ImageView
-                        android:id="@+id/life_helecopter_map"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_job"/>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/life_text7"
-                    android:textColor="#001"
                     android:layout_marginTop="8dp"
-                    android:textSize="14dp"/>
+                    android:text="@string/life_text_3"
+                    android:textColor="#001"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/life_text8"
-                    android:textColor="#001"
-                    android:layout_marginTop="8dp"
-                    android:textSize="14dp"/>
+                    android:gravity="center"
+                    android:text="Рабочее место сотрудников"
+                    android:textColor="#060683"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/life_text9"
-                    android:textColor="#001"
+                    android:layout_gravity="center"
                     android:layout_marginTop="8dp"
-                    android:textSize="14dp"/>
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_employees_place"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_educational_iaboratory"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_lecture_room"/>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:src="@drawable/ic_on_a_separate"/>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
