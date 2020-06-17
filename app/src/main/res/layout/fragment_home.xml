@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="#EFEBEB"
+    android:padding="16dp"
     tools:context=".ui.home.HomeFragment">
 
     <LinearLayout
@@ -14,10 +14,12 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_width="219dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_emblem" />
+            android:src="@drawable/ic_home_image" />
 
         <TextView
             android:layout_width="match_parent"
@@ -29,12 +31,37 @@
             android:textSize="18dp"
             android:textStyle="bold" />
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/view_image_slider"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_height="230dp"/>
+            android:layout_height="230dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:alpha="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/view_image_slider"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -48,22 +75,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="16dp"
-                android:textSize="16dp"
-                android:text="@string/short_description"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:textSize="16dp"
-                android:text="@string/home_title_2"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/short_description"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -71,8 +89,8 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="16dp"
-                    android:textSize="16dp"
-                    android:text="@string/home_title_3"/>
+                    android:text="@string/home_title_2"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -80,8 +98,17 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="16dp"
-                    android:textSize="16dp"
-                    android:text="@string/home_title_4"/>
+                    android:text="@string/home_title_3"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/home_title_4"
+                    android:textSize="16dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -129,9 +156,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/home_the_words_of_the_director"
-                    android:padding="16dp"
                     android:gravity="center"
+                    android:padding="16dp"
+                    android:text="@string/home_the_words_of_the_director"
                     android:textColor="#000080"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -162,8 +189,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="match_parent"

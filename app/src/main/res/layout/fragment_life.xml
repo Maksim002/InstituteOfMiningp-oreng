@@ -28,182 +28,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Научная деятельность"
-                    android:textColor="#060683"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_1"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_2"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_4"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_5"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_6"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_7"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_8"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_9"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_10"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/life_text_10"
-                    android:autoLink="web"
-                    android:textColor="#001"
-                    android:textSize="16dp" />
-
-                <LinearLayout
-                    android:id="@+id/life_map"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_baseline_near_me_24"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="г.Бишкек, пр.Чуй 215"
-                        android:layout_marginLeft="8dp"
-                        android:autoLink="map"
-                        android:textColor="#001"
-                        android:textSize="18dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_baseline_local_phone_24"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Телефон: +996 (312) 61 19 21"
-                        android:layout_marginLeft="8dp"
-                        android:autoLink="all"
-                        android:textColor="#001"
-                        android:textSize="18dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_baseline_email_24"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="E-mail: itimm@gmail.com"
-                        android:autoLink="email"
-                        android:layout_marginLeft="8dp"
-                        android:textColor="#001"
-                        android:textSize="18dp"/>
-                </LinearLayout>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
                     android:text="Материальная база"
                     android:textColor="#060683"
                     android:textSize="18dp"
@@ -271,6 +95,7 @@
                     app:cardCornerRadius="8dp">
 
                     <ImageView
+                        android:id="@+id/life_place_of_staff"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_job"/>
@@ -281,8 +106,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/life_text_3"
+                    android:layout_marginBottom="8dp"
                     android:textColor="#001"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:layout_width="match_parent"

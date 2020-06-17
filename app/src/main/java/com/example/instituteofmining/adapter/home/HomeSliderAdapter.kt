@@ -24,6 +24,8 @@ class HomeSliderAdapter: RecyclerView.Adapter<HomeSliderHolder>(){
         return item.size
     }
 
+
+
     override fun onBindViewHolder(holder: HomeSliderHolder, position: Int) {
         holder.bind(item.get(position))
     }

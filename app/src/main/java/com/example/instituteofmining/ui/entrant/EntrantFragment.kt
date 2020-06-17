@@ -1,11 +1,13 @@
 package com.example.instituteofmining.ui.entrant
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.OvershootInterpolator
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.instituteofmining.R
 import kotlinx.android.synthetic.main.fragment_entrant.*
 
@@ -23,6 +25,12 @@ class EntrantFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initExpandable()
+
+        Glide
+            .with(entrant_image.context)
+            .load("https://static.gazeta.ua/img/cache/preview/687/687174_w_800.jpg")
+            .into(entrant_image);
+
     }
 
     private fun initExpandable() {
@@ -31,7 +39,7 @@ class EntrantFragment : Fragment() {
         entrant_metallurgical.setExpandInterpolator(OvershootInterpolator())
         entrant_metallurgical.setCollapseInterpolator(OvershootInterpolator())
 
-        entrant_metallurgical.setOnClickListener{
+        entrant_metallurgical.setOnClickListener {
             if (entrant_metallurgical.isExpanded()) {
                 entrant_metallurgical.collapse()
                 entrant_metallurgical.setText(R.string.entrant_expandable_2)
@@ -41,48 +49,18 @@ class EntrantFragment : Fragment() {
             }
         }
 
-        entrant_geological.setAnimationDuration(50L)
-        entrant_geological.setInterpolator(OvershootInterpolator())
-        entrant_geological.setExpandInterpolator(OvershootInterpolator())
-        entrant_geological.setCollapseInterpolator(OvershootInterpolator())
-
-        entrant_geological.setOnClickListener{
-            if (entrant_geological.isExpanded()) {
-                entrant_geological.collapse()
-                entrant_geological.setText(R.string.entrant_expandable_4)
-            } else {
-                entrant_geological.expand()
-                entrant_geological.setText(R.string.entrant_expandable_3)
-            }
-        }
-
         entrant_magistracy.setAnimationDuration(50L)
         entrant_magistracy.setInterpolator(OvershootInterpolator())
         entrant_magistracy.setExpandInterpolator(OvershootInterpolator())
         entrant_magistracy.setCollapseInterpolator(OvershootInterpolator())
 
-        entrant_magistracy.setOnClickListener{
+        entrant_magistracy.setOnClickListener {
             if (entrant_magistracy.isExpanded()) {
                 entrant_magistracy.collapse()
                 entrant_magistracy.setText(R.string.entrant_expandable_5)
             } else {
                 entrant_magistracy.expand()
                 entrant_magistracy.setText(R.string.entrant_expandable_6)
-            }
-        }
-
-        entrant_in_absentia.setAnimationDuration(50L)
-        entrant_in_absentia.setInterpolator(OvershootInterpolator())
-        entrant_in_absentia.setExpandInterpolator(OvershootInterpolator())
-        entrant_in_absentia.setCollapseInterpolator(OvershootInterpolator())
-
-        entrant_in_absentia.setOnClickListener{
-            if (entrant_in_absentia.isExpanded()) {
-                entrant_in_absentia.collapse()
-                entrant_in_absentia.setText(R.string.entrant_expandable_7)
-            } else {
-                entrant_in_absentia.expand()
-                entrant_in_absentia.setText(R.string.entrant_expandable_8)
             }
         }
     }

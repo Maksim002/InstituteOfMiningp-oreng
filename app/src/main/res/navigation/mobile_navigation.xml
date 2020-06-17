@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/navigation_life"
         android:name="com.example.instituteofmining.ui.life.LifeFragment"
-        android:label="Студенческая жизнь"
+        android:label="Материальная база"
         tools:layout="@layout/fragment_life" />
 
     <fragment
