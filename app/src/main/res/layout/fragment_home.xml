@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_home_image" />
+            android:src="@drawable/ic_add_from" />
 
         <TextView
             android:layout_width="match_parent"
